@@ -1,0 +1,20 @@
+{
+  "name": "electron-remote-control",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/main/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:main": "electron .",
+    "start:render": "cd app/renderer/src/main && pnpm run dev",
+    "start": "concurrently \"pnpm run start:render\" \"wait-on http://localhost:3000\" \"pnpm run start:main\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "electron": "^25.1.0",
+    "electron-is-dev": "^2.0.0",
+    "wait-on": "^7.0.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
